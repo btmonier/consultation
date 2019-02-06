@@ -23,4 +23,43 @@
 #    the best transcript for each gene and its associated metadata.
 #--------------------------------------------------------------------
 
+# === Preamble ======================================================
+
+## Load packages
+library(tidyverse)
+
+## Import data
+blast <- readr::read_csv("subsetting_blast.csv")
+
+## Inspect data
+blast
+
+
+
+# === Subsetting ====================================================
+
+## Get unique genes
+genes <- unique(blast$gene)
+
+## Find all transcripts for each gene
+sub_g1 <- blast[grep(pattern = genes[1], x = blast$trans), ]
+sub_g1_t <- table(sub_g1$trans)
+sub_g1_t_names <- names(sub_g1_t)[which.max(sub_g1_t)]
+sub_g1 <- sub_g1[grep(pattern = sub_g1_t_names, x = blast$trans), ]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
