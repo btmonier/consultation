@@ -42,10 +42,10 @@ blast
 genes <- unique(blast$gene)
 
 ## Find all transcripts for each gene
-sub_g1 <- blast[grep(pattern = genes[1], x = blast$trans), ]
-sub_g1_t <- table(sub_g1$trans)
-sub_g1_t_names <- names(sub_g1_t)[which.max(sub_g1_t)]
-sub_g1 <- sub_g1[grep(pattern = sub_g1_t_names, x = blast$trans), ]
+a1 <- blast[grep(pattern = genes[1], x = blast$trans), ]
+a2 <- table(a1$trans)
+a3 <- names(a2)[which.max(a2)]
+a4 <- a1[grep(pattern = a3, x = blast$trans), ]
 
 
 
