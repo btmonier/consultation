@@ -4,8 +4,8 @@
 # Script Name:   subsetting_blast.R
 # Description:   Subset BLAST results based on criteria
 # Author:        Brandon Monier
-# Created:       2019-02-06 10:05:18
-# Last Modified:
+# Created:       2019-02-06 at 10:05:18
+# Last Modified: 2019-02-11 at 13:53:03
 #--------------------------------------------------------------------
 
 #--------------------------------------------------------------------
@@ -122,7 +122,7 @@ times <- microbenchmark::microbenchmark(
             ), ]
         }
     },
-    times = 1000L
+    times = 100L
 )
 
 ## Plot the class with ggplot2
