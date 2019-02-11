@@ -102,13 +102,13 @@ colnames(blast_df) <- colnames(onek_blast)
 times <- microbenchmark::microbenchmark(
     lapply = function() {
         blast_ls <- lapply(X = seq_along(unique(onek_blast$gene)), FUN = function(i) {
-        tmp <- onek_blast[which(onek_blast$gene == unique(onek_blast$gene)[i]), ]
-        blast_ls <- tmp[which(
-            max(tmp$noSpeciesMatchesPerTranscript) &&
-                max(tmp$percentMatch) &&
-                max(tmp$bitScore)
-        ), ]
-        return(blast_ls)
+            tmp <- onek_blast[which(onek_blast$gene == unique(onek_blast$gene)[i]), ]
+            blast_ls <- tmp[which(
+                max(tmp$noSpeciesMatchesPerTranscript) &&
+                    max(tmp$percentMatch) &&
+                    max(tmp$bitScore)
+            ), ]
+            return(blast_ls)
         })
     },
     for_loop = function() {
